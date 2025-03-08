@@ -41,11 +41,11 @@ public class Estado {
         this.pais = pais;
     }
 
-    public String getNomePais(){
+    public String retornarNomePais(){
         return pais.getNome();
     }
 
-    public String getSiglaPais(){
+    public String retornarSiglaPais(){
         return pais.getSigla();
     }
 }
