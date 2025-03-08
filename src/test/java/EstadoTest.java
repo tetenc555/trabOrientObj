@@ -47,4 +47,15 @@ class EstadoTest {
         Estado p = new Estado ("Minas Gerais", "MG",new Pais("Brasil","BR"));
         assertEquals("MG", p.getSigla());
     }
+
+    @Test
+    void deveRetornarNomePais() {
+        Estado p = new Estado ("Minas Gerais", "MG",new Pais("Brasil","BR"));
+        assertEquals("Brasil", p.retornarNomePais());
+    }
+    @Test
+    void deveRetornarSiglaPais() {
+        Estado p = new Estado ("Minas Gerais", "MG",new Pais("Brasil","BR"));
+        assertEquals("BR", p.retornarSiglaPais());
+    }
 }
