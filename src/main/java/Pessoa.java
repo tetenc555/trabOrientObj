@@ -3,6 +3,12 @@ public abstract class Pessoa {
     private int ID;
     private Cidade cidade;
 
+    public Pessoa(String nome, int ID, Cidade cidade) {
+        this.setNome(nome);
+        this.setID(ID);
+        this.setCidade(cidade);
+    }
+
     public String getNome() {
         return nome;
     }
