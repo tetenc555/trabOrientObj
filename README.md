@@ -31,25 +31,25 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 
 ## Consultas:
 
-Qual o estado em que se localiza a cidade de uma empresa?
-Qual o país em que se localiza o estado da cidade de uma empresa?
-Qual o lucro obtido no histórico das filiais da empresa?
-Quantos dependentes de funcionários a folha de pagamento possui?
-Quantos dependentes abonados de funcionários a folha de pagamento possui?
-Qual o estado da cidade de um funcionário? 
-Qual o país em que se localiza o estado da cidade de um funcionário?
-Quantos dependentes possui o coordenador local de uma filial?
-Quantos dependentes abonados possui o coordenador local de uma filial? 
-Remova todos os funcionários da folha de pagamento.
-Qual o estado de entrega de uma venda no atacado?
-Qual o país de entrega de uma venda no atacado?
-Qual a cidade de entrega de uma compra no atacado?
-Qual o estado de entrega de uma compra no atacado?
-Qual o país de entrega de uma compra no atacado?
-Qual a cidade do remetente de uma compra no atacado?
-Qual o estado do remetente de uma compra no atacado?
-Qual o país do remetente de uma compra no atacado?
-Qual o discriminativo do histórico de uma filial?
-Qual o lucro obtido no histórico de uma filial? 
+1)Qual o estado em que se localiza a cidade de uma empresa?
+2)Qual o país em que se localiza o estado da cidade de uma empresa?
+3)Qual o lucro obtido no histórico das filiais da empresa?
+4)Quantos dependentes de funcionários a folha de pagamento possui?
+5)Quantos dependentes abonados de funcionários a folha de pagamento possui?
+6)Qual o estado da cidade de um funcionário? 
+7)Qual o país em que se localiza o estado da cidade de um funcionário?
+8)Quantos dependentes possui o coordenador local de uma filial?
+9)Quantos dependentes abonados possui o coordenador local de uma filial? 
+10)Remova todos os funcionários da folha de pagamento.
+11)Qual o estado de entrega de uma venda no atacado?
+12)Qual o país de entrega de uma venda no atacado?
+13)Qual a cidade de entrega de uma compra no atacado?
+14)Qual o estado de entrega de uma compra no atacado?
+15)Qual o país de entrega de uma compra no atacado?
+16)Qual a cidade do remetente de uma compra no atacado?
+17)Qual o estado do remetente de uma compra no atacado?
+18)Qual o país do remetente de uma compra no atacado?
+19)Qual o discriminativo do histórico de uma filial?
+20)Qual o lucro obtido no histórico de uma filial? 
 
 
