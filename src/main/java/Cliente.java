@@ -14,7 +14,7 @@ public class Cliente extends Pessoa{
 
     public void setQtdCompras(int qtdCompras) {
         if (qtdCompras < 0) {
-            throw new IllegalArgumentException("Quantidade de Compras Inválida!")
+            throw new IllegalArgumentException("Quantidade de Compras Inválida!");
         }
         this.qtdCompras = qtdCompras;
     }
@@ -32,7 +32,7 @@ public class Cliente extends Pessoa{
             throw new IllegalArgumentException("Já é fidelidade!");
         }
         this.setCartaoFidelidade(true);
-        return (this.getNome() + "se tornou fidelidade!");
+        return (this.getNome() + " se tornou fidelidade!");
     }
 
     public void adicionarCompra(){
