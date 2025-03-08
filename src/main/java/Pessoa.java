@@ -47,11 +47,11 @@ public abstract class Pessoa {
     }
 
     public String retornarNomeEstado(){
-        return this.cidade.getNome();
+        return this.cidade.retornarNomeEstado();
     }
 
     public String retornarSiglaEstado(){
-        return this.cidade.getSigla();
+        return this.cidade.retornarSiglaEstado();
     }
 
     public String retornarNomePais(){
