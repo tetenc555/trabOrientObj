@@ -7,8 +7,8 @@ public class Funcionario extends Pessoa{
 
     public Funcionario(String nome, int ID, Cidade cidade, float salarioBase, float descontos) {
         super(nome, ID, cidade);
-        this.salarioBase = salarioBase;
-        this.descontos = descontos;
+        this.setSalarioBase(salarioBase);
+        this.setDescontos(descontos);
         this.dependentes = new ArrayList<Dependente>();
     }
 
