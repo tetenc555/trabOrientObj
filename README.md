@@ -4,14 +4,17 @@ _Tema: Sistema de Gerenciamento de Lucros de uma Empresa_
 ## Objetivo: 
 Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela analisa o lucro de cada uma de suas filiais. Para se obter o lucro, basta analisar as ocorrências no histórico de cada filial, os quais podem ser vendas, compras e pagamento de funcionários. Vale ressaltar que essas empresas fazem compras e vendas com parceiros e venda aos clientes.
 
-## Esquema de Classes (clique para redirecionar ao UML):
+## Esquema de Classes:
 <a href="https://github.com/tetenc555/trabOrientObj/blob/main/classes.mdj"><img src="https://github.com/tetenc555/trabOrientObj/blob/main/printUML.png" width="500px" height="auto" /></a>
+>_Clique para redirecionar ao UML! Construído via StarUML._
 
 ## Pontos Importantes:
 
 ### Classe Clientes:
 * Desconto de 10% se forem Fidelidade (boolean)
 * a cada 10 compras tomam 2% de desconto, sendo cumulativo (int)
+* tornarFidelidade deve reportar se já e fidelidade, ou se tornou em fidelidade, usando set para guardar o objeto.
+* sempre que uma vendaVarejo for instanciada, deve se somar uma compra ao cliente, sendo que está não deve ser válida para aplicação do desconto no momento desta venda.
 ### Classe Parceiro:
 * anos de Parceira (int) definem quantos anos há da parceria
 * o valor base entre parceiros é sempre 10% de desconto
