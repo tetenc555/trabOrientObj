@@ -42,18 +42,18 @@ public class Cidade {
     }
 
     public String retornarNomeEstado(){
-        return estado.getNome();
+        return this.estado.getNome();
     }
 
     public String retornarSiglaEstado(){
-        return estado.getSigla();
+        return this.estado.getSigla();
     }
 
     public String retornarNomePais(){
-        return estado.retornarNomePais();
+        return this.estado.retornarNomePais();
     }
 
     public String retornarSiglaPais(){
-        return estado.retornarSiglaPais();
+        return this.estado.retornarSiglaPais();
     }
 }
