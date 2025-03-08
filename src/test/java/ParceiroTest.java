@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-//Parceiro p = new Parceiro("Empresa 1",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1);
 
 class ParceiroTest {
     //testes envolvendo classe pessoa
