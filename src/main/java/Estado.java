@@ -14,7 +14,7 @@ public class Estado {
 
     public void setNome(String nome) {
         if (nome == null || nome.isEmpty()) {
-            throw new IllegalArgumentException("País deve possuir um nome.");
+            throw new IllegalArgumentException("Estado deve possuir um nome.");
         }
         this.nome = nome;
     }
@@ -25,7 +25,7 @@ public class Estado {
 
     public void setSigla(String sigla) {
         if (sigla == null || sigla.isEmpty()) {
-            throw new IllegalArgumentException("País deve possuir uma sigla.");
+            throw new IllegalArgumentException("Estado deve possuir uma sigla.");
         }
         this.sigla = sigla;
     }
