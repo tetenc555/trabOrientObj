@@ -24,7 +24,7 @@ public class Pais {
 
     public void setSigla(String sigla) {
         if (sigla == null || sigla.isEmpty()) {
-            throw new IllegalArgumentException("Sigla deve possuir um nome.");
+            throw new IllegalArgumentException("País deve possuir uma sigla.");
         }
         this.sigla = sigla;
     }
