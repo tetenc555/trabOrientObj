@@ -13,6 +13,8 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 ### Classe Clientes:
 * Desconto de 10% se forem Fidelidade (boolean)
 * a cada 10 compras tomam 2% de desconto, sendo cumulativo (int)
+* tornarFidelidade deve reportar se já e fidelidade, ou se tornou em fidelidade, usando set para guardar o objeto.
+* sempre que uma vendaVarejo for instanciada, deve se somar uma compra ao cliente, sendo que está não deve ser válida para aplicação do desconto no momento desta venda.
 ### Classe Parceiro:
 * anos de Parceira (int) definem quantos anos há da parceria
 * o valor base entre parceiros é sempre 10% de desconto
