@@ -3663,7 +3663,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 575,
-											"width": 119.60595703125,
+											"width": 200.0498046875,
 											"height": 13,
 											"text": "folhaPagamento"
 										},
@@ -3701,7 +3701,7 @@
 									"parentStyle": true,
 									"left": 776,
 									"top": 568,
-									"width": 129.60595703125,
+									"width": 210.0498046875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVV/T/T7Ao4QM="
@@ -3739,7 +3739,7 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 598,
-											"width": 119.60595703125,
+											"width": 200.0498046875,
 											"height": 13,
 											"text": "-valorBonus",
 											"horizontalAlignment": 0
@@ -3749,7 +3749,7 @@
 									"parentStyle": true,
 									"left": 776,
 									"top": 593,
-									"width": 129.60595703125,
+									"width": 210.0498046875,
 									"height": 23
 								},
 								{
@@ -3775,9 +3775,46 @@
 											"parentStyle": true,
 											"left": 781,
 											"top": 621,
-											"width": 119.60595703125,
+											"width": 200.0498046875,
 											"height": 13,
 											"text": "+calcularValorFinal()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGVdbAQXArEJFY=",
+											"_parent": {
+												"$ref": "AAAAAAGVV/T/T7Atuok="
+											},
+											"model": {
+												"$ref": "AAAAAAGVdbAQSAq+Wo0="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 781,
+											"top": 636,
+											"width": 200.0498046875,
+											"height": 13,
+											"text": "+removerFuncionarioID(ID)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGVdbBUBwyhtDw=",
+											"_parent": {
+												"$ref": "AAAAAAGVV/T/T7Atuok="
+											},
+											"model": {
+												"$ref": "AAAAAAGVdbBT/wybcok="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 781,
+											"top": 636,
+											"width": 200.0498046875,
+											"height": 13,
+											"text": "+removerTodosFuncionarios()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -3785,8 +3822,8 @@
 									"parentStyle": true,
 									"left": 776,
 									"top": 616,
-									"width": 129.60595703125,
-									"height": 23
+									"width": 210.0498046875,
+									"height": 38
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -3828,8 +3865,8 @@
 							"containerChangeable": true,
 							"left": 776,
 							"top": 568,
-							"width": 128.60595703125,
-							"height": 73,
+							"width": 209.0498046875,
+							"height": 88,
 							"nameCompartment": {
 								"$ref": "AAAAAAGVV/T/T7Anpag="
 							},
@@ -3931,7 +3968,7 @@
 							"tail": {
 								"$ref": "AAAAAAGVV/T/TrAmSw8="
 							},
-							"points": "905:604;1221:604;1221:431",
+							"points": "985:604;1221:604;1221:431",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGVV/T/frBuYb8="
@@ -9999,6 +10036,32 @@
 								"$ref": "AAAAAAGVV/T/TrAkdY8="
 							},
 							"name": "calcularValorFinal"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGVdbAQSAq+Wo0=",
+							"_parent": {
+								"$ref": "AAAAAAGVV/T/TrAkdY8="
+							},
+							"name": "removerFuncionarioID",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAGVdbBTsgwkSJc=",
+									"_parent": {
+										"$ref": "AAAAAAGVdbAQSAq+Wo0="
+									},
+									"name": "ID"
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGVdbBT/wybcok=",
+							"_parent": {
+								"$ref": "AAAAAAGVV/T/TrAkdY8="
+							},
+							"name": "removerTodosFuncionarios"
 						}
 					]
 				},
@@ -10042,7 +10105,8 @@
 								"$ref": "AAAAAAGVV/zgT/AmcPk="
 							},
 							"name": "destinatario",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
