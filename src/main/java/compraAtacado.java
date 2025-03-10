@@ -1,9 +1,9 @@
 public class compraAtacado extends OcorrenciaProduto{
-    private Parceiro destinatario;
+    private Empresa destinatario;
     private Parceiro remetente;
 
-    public compraAtacado(String descricao, int estoque, int qtdOcorrencia, float valorUnitario, Parceiro destinatario, Parceiro remetente) {
-        super(descricao, true, estoque, qtdOcorrencia, valorUnitario);
+    public compraAtacado(String descricao, int estoque, int qtdOcorrencia, float valorUnitario, Empresa destinatario, Parceiro remetente) {
+        super(descricao, false, estoque, qtdOcorrencia, valorUnitario);
         this.setDestinatario(destinatario);
         this.setRemetente(remetente);
     }
@@ -19,11 +19,11 @@ public class compraAtacado extends OcorrenciaProduto{
         this.remetente = remetente;
     }
 
-    public Parceiro getDestinatario() {
+    public Empresa getDestinatario() {
         return destinatario;
     }
 
-    public void setDestinatario(Parceiro destinatario) {
+    public void setDestinatario(Empresa destinatario) {
         if (destinatario == null) {
             throw new NullPointerException("Deve possuir um destinatário!");
         }
