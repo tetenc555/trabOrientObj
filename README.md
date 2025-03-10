@@ -34,28 +34,56 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 ### Classe Empresa:
 - calcularLucroAtual deve calcular o lucro de todas as filiais e salvar em lucroAtual
 - comparacaoDeLucros deve imprimir no modelo “Em comparação ao período anterior, foi obtido prejuízo/lucro de R$**,**” ou “Não houve mudança entre os dois períodos.”
+### Classe Ocorrência e OcorrênciaProduto:
+* Ocorrência é pai, ou seja, todas ocorrências possuem valorFinal, descrição e tipo (true para lucro, false para desconto).
+* OcorrênciaProduto define propriedades apenas utilizadas para as ocorrências envolvendo compra e venda de Produtos
+* OcorrenciaProduto determina erro se o estoque é vazio, se qtdOcorrencia é menor igual a 0, ou se a ocorrência não é válida (qtdOcorrencia não pode ser maior que a quantidade disponível no estoque)
+* A ocorrênciaProduto determina estoque do produto, junto da qtdOcorrencia. Já seus filhos determinam calcularDesconto para uso no calcularValorFinal. Os filhos também determinam remetente e destinatário em seu construtor para as funções retornarLocalEntrega e retornarLocalRemetente, herdadas de ocorrenciaProduto.
+**OBS**: 
+* Por definição, vendaAtacado, filha de ocorrênciaProduto, só define qtdOcorrencias maiores que o valor mínimo! Se qtdOcorrencias for menor ou igual, retorna erro. 
+
 
 ## Consultas:
 
-1)Qual o estado em que se localiza a cidade de uma empresa?
-2)Qual o país em que se localiza o estado da cidade de uma empresa?
-3)Qual o lucro obtido no histórico das filiais da empresa?
-4)Quantos dependentes de funcionários a folha de pagamento possui?
-5)Quantos dependentes abonados de funcionários a folha de pagamento possui?
-6)Qual o estado da cidade de um funcionário? 
-7)Qual o país em que se localiza o estado da cidade de um funcionário?
-8)Quantos dependentes possui o coordenador local de uma filial?
-9)Quantos dependentes abonados possui o coordenador local de uma filial? 
-10)Remova todos os funcionários da folha de pagamento.
-11)Qual o estado de entrega de uma venda no atacado?
-12)Qual o país de entrega de uma venda no atacado?
-13)Qual a cidade de entrega de uma compra no atacado?
-14)Qual o estado de entrega de uma compra no atacado?
-15)Qual o país de entrega de uma compra no atacado?
-16)Qual a cidade do remetente de uma compra no atacado?
-17)Qual o estado do remetente de uma compra no atacado?
-18)Qual o país do remetente de uma compra no atacado?
-19)Qual o discriminativo do histórico de uma filial?
-20)Qual o lucro obtido no histórico de uma filial? 
+
+1) Qual o estado em que se localiza a cidade de uma empresa?
+
+2) Qual o país em que se localiza o estado da cidade de uma empresa?
+
+3) Qual o lucro obtido no histórico das filiais da empresa?
+
+4) Quantos dependentes de funcionários a folha de pagamento possui?
+
+5) Quantos dependentes abonados de funcionários a folha de pagamento possui?
+
+6) Qual o estado da cidade de um funcionário? 
+
+7) Qual o país em que se localiza o estado da cidade de um funcionário?
+
+8) Quantos dependentes possui o coordenador local de uma filial?
+
+9) Quantos dependentes abonados possui o coordenador local de uma filial? 
+
+10) Remova todos os funcionários da folha de pagamento.
+
+11) Qual o estado de entrega de uma venda no atacado?
+
+12) Qual o país de entrega de uma venda no atacado?
+
+13) Qual a cidade de entrega de uma compra no atacado?
+
+14) Qual o estado de entrega de uma compra no atacado?
+
+15) Qual o país de entrega de uma compra no atacado?
+
+16) Qual a cidade do remetente de uma compra no atacado?
+
+17) Qual o estado do remetente de uma compra no atacado?
+
+18) Qual o país do remetente de uma compra no atacado?
+
+19) Qual o discriminativo do histórico de uma filial?
+
+20) Qual o lucro obtido no histórico de uma filial? 
 
 
