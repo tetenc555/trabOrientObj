@@ -415,7 +415,7 @@
 											"parentStyle": true,
 											"left": 1189,
 											"top": 351,
-											"width": 120.08837890625,
+											"width": 120.32958984375,
 											"height": 13,
 											"text": "Ocorrencia"
 										},
@@ -453,7 +453,7 @@
 									"parentStyle": true,
 									"left": 1184,
 									"top": 344,
-									"width": 130.08837890625,
+									"width": 130.32958984375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGVV8dJnnY1uEw="
@@ -491,7 +491,7 @@
 											"parentStyle": true,
 											"left": 1189,
 											"top": 374,
-											"width": 120.08837890625,
+											"width": 120.32958984375,
 											"height": 13,
 											"text": "-descricao",
 											"horizontalAlignment": 0
@@ -509,9 +509,28 @@
 											"parentStyle": true,
 											"left": 1189,
 											"top": 389,
-											"width": 120.08837890625,
+											"width": 120.32958984375,
 											"height": 13,
 											"text": "-tipo",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGVfc5pyF37TLU=",
+											"_parent": {
+												"$ref": "AAAAAAGVV8dJn3Y5fao="
+											},
+											"model": {
+												"$ref": "AAAAAAGVfc5pr134lNU="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 1189,
+											"top": 404,
+											"width": 120.32958984375,
+											"height": 13,
+											"text": "-valorFinal",
 											"horizontalAlignment": 0
 										}
 									],
@@ -519,7 +538,7 @@
 									"parentStyle": true,
 									"left": 1184,
 									"top": 369,
-									"width": 130.08837890625,
+									"width": 130.32958984375,
 									"height": 38
 								},
 								{
@@ -564,9 +583,27 @@
 											"parentStyle": true,
 											"left": 1189,
 											"top": 414,
-											"width": 120.08837890625,
+											"width": 120.32958984375,
 											"height": 13,
 											"text": "+calcularValorFinal()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGVfdGqr2gJ0To=",
+											"_parent": {
+												"$ref": "AAAAAAGVV8dJn3Y6pFM="
+											},
+											"model": {
+												"$ref": "AAAAAAGVfdGqpmgG3Hc="
+											},
+											"font": "Arial;13;0",
+											"parentStyle": true,
+											"left": 1189,
+											"top": 429,
+											"width": 120.32958984375,
+											"height": 13,
+											"text": "+retornarValorFinal()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -574,8 +611,8 @@
 									"parentStyle": true,
 									"left": 1184,
 									"top": 407,
-									"width": 130.08837890625,
-									"height": 25
+									"width": 130.32958984375,
+									"height": 40
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -617,8 +654,8 @@
 							"containerChangeable": true,
 							"left": 1184,
 							"top": 344,
-							"width": 129.08837890625,
-							"height": 88,
+							"width": 129.32958984375,
+							"height": 103,
 							"nameCompartment": {
 								"$ref": "AAAAAAGVV8dJnnY0Qug="
 							},
@@ -4024,7 +4061,7 @@
 							"tail": {
 								"$ref": "AAAAAAGVV/T/TrAmSw8="
 							},
-							"points": "985:604;1248:604;1248:432",
+							"points": "985:604;1248:604;1248:447",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGVV/T/frBuYb8="
@@ -4721,7 +4758,7 @@
 											"top": 366,
 											"width": 157.43798828125,
 											"height": 13,
-											"text": "-estoque",
+											"text": "-estoqueAtual",
 											"horizontalAlignment": 0
 										},
 										{
@@ -9988,6 +10025,15 @@
 							"name": "tipo",
 							"visibility": "private",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGVfc5pr134lNU=",
+							"_parent": {
+								"$ref": "AAAAAAGVV8dJnnYxsTc="
+							},
+							"name": "valorFinal",
+							"visibility": "private"
 						}
 					],
 					"operations": [
@@ -10007,6 +10053,14 @@
 							},
 							"name": "calcularValorFinal",
 							"isAbstract": true
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGVfdGqpmgG3Hc=",
+							"_parent": {
+								"$ref": "AAAAAAGVV8dJnnYxsTc="
+							},
+							"name": "retornarValorFinal"
 						}
 					],
 					"isAbstract": true
@@ -10990,9 +11044,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGVV/zgT/AmcPk="
 							},
-							"name": "estoque",
-							"visibility": "private",
-							"type": ""
+							"name": "estoqueAtual",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",

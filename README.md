@@ -37,9 +37,9 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 - calcularLucroAtual deve calcular o lucro de todas as filiais e salvar em lucroAtual
 - comparacaoDeLucros deve imprimir no modelo “Em comparação ao período anterior, foi obtido prejuízo/lucro de R$**,**” ou “Não houve mudança entre os dois períodos.”
 ### Classe Ocorrência e OcorrênciaProduto
-* Ocorrência é pai, ou seja, todas ocorrências possuem valorFinal, descrição e tipo (true para lucro, false para desconto).
+* Ocorrência é pai, ou seja, todas ocorrências possuem valorFinal, descrição e tipo (true para lucro, false para prejuízo). Por isso, retorna positivo em caso de true e negativo em caso de false, pela função retornarValorFinal.
 * OcorrênciaProduto define propriedades apenas utilizadas para as ocorrências envolvendo compra e venda de Produtos
-* OcorrenciaProduto determina erro se o estoque é vazio, se qtdOcorrencia é menor igual a 0, ou se a ocorrência não é válida (qtdOcorrencia não pode ser maior que a quantidade disponível no estoque)
+* OcorrenciaProduto determina erro se o estoque é negativo, se qtdOcorrencia é menor igual a 0, ou se a ocorrência não é válida (qtdOcorrencia não pode ser maior que a quantidade disponível no estoque)
 * A ocorrênciaProduto determina estoque do produto, junto da qtdOcorrencia. Já seus filhos determinam calcularDesconto para uso no calcularValorFinal. Os filhos também determinam remetente e destinatário e as funções retornarLocalEntrega e retornarLocalRemetente, abstratas de ocorrenciaProduto.
 
 **OBS** 
