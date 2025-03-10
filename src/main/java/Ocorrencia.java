@@ -5,7 +5,6 @@ public abstract class Ocorrencia {
     public Ocorrencia(String descricao, boolean tipo) {
         this.setDescricao(descricao);
         this.setTipo(tipo);
-        //this.setValorFinal(this.calcularValorFinal());
     }
 
     public String getDescricao() {
@@ -13,6 +12,9 @@ public abstract class Ocorrencia {
     }
 
     public void setDescricao(String descricao) {
+        if (descricao == null || descricao.isEmpty()){
+            throw new IllegalArgumentException("Ocorrência deve possuir descrição!");
+        }
         this.descricao = descricao;
     }
 

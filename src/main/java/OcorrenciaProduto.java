@@ -5,9 +5,9 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
 
     public OcorrenciaProduto(String descricao, boolean tipo, int estoque, int qtdOcorrencia, float valorUnitario) {
         super(descricao, tipo);
-        this.estoque = estoque;
-        this.qtdOcorrencia = qtdOcorrencia;
-        this.valorUnitario = valorUnitario;
+        this.setEstoque(estoque);
+        this.setQtdOcorrencia(qtdOcorrencia);
+        this.setValorUnitario(valorUnitario);
     }
 
     public int getEstoque() {
