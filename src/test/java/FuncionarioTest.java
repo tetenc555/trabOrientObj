@@ -131,4 +131,40 @@ class FuncionarioTest {
         p.addDependentes(p3);
         assertEquals(2,p.quantDepAbono());
     }
+
+    @Test
+    void deveCalcularSalarioBasico(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        assertEquals(1412.0f,p.calcularSalarioIndividual());
+    }
+
+    @Test
+    void deveCalcularSalarioComDesconto(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,100.0f);
+        assertEquals(1312.0f,p.calcularSalarioIndividual());
+    }
+
+    @Test
+    void deveCalcularSalarioComDependetesAbonados(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        Dependente p1 = new Dependente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),17);
+        Dependente p2 = new Dependente("Caua Moreno",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),18);
+        Dependente p3 = new Dependente("Pedro Moreno Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),19);
+        p.addDependentes(p1);
+        p.addDependentes(p2);
+        p.addDependentes(p3);
+        assertEquals(1712.0f,p.calcularSalarioIndividual());
+    }
+
+    @Test
+    void deveCalcularSalarioComDependetesAbonadosDesconto(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,100.0f);
+        Dependente p1 = new Dependente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),17);
+        Dependente p2 = new Dependente("Caua Moreno",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),18);
+        Dependente p3 = new Dependente("Pedro Moreno Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),19);
+        p.addDependentes(p1);
+        p.addDependentes(p2);
+        p.addDependentes(p3);
+        assertEquals(1612.0f,p.calcularSalarioIndividual());
+    }
 }
