@@ -2,8 +2,8 @@ public class vendaVarejo extends OcorrenciaProduto{
     private Cliente destinatario;
     private Empresa remetente;
 
-    public vendaVarejo(String descricao, boolean tipo, int estoque, int qtdOcorrencia, float valorUnitario, Cliente destinatario, Empresa remetente) {
-        super(descricao, tipo, estoque, qtdOcorrencia, valorUnitario);
+    public vendaVarejo(String descricao, int estoque, int qtdOcorrencia, float valorUnitario, Cliente destinatario, Empresa remetente) {
+        super(descricao, true, estoque, qtdOcorrencia, valorUnitario);
         this.setDestinatario(destinatario);
         this.setRemetente(remetente);
         this.getDestinatario().adicionarCompra();

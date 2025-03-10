@@ -1,11 +1,21 @@
 public abstract class Ocorrencia {
     private String descricao;
-    private boolean tipo;
+    private boolean lucro;
 
-    public Ocorrencia(String descricao, boolean tipo) {
+    public Ocorrencia(String descricao, boolean lucro) {
         this.setDescricao(descricao);
-        this.setTipo(tipo);
+        this.setLucro(lucro);
     }
+
+    public float retornarValorFinal() {
+        if (this.isLucro()){
+            return this.calcularValorFinal();
+        }
+        else {
+            return -1 * this.calcularValorFinal();
+        }
+    }
+
 
     public String getDescricao() {
         return descricao;
@@ -18,12 +28,12 @@ public abstract class Ocorrencia {
         this.descricao = descricao;
     }
 
-    public boolean isTipo() {
-        return tipo;
+    public boolean isLucro() {
+        return lucro;
     }
 
-    public void setTipo(boolean tipo) {
-        this.tipo = tipo;
+    public void setLucro(boolean lucro) {
+        this.lucro = lucro;
     }
 
     public abstract float calcularValorFinal();

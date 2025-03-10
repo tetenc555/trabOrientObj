@@ -1,27 +1,24 @@
 public abstract class OcorrenciaProduto extends Ocorrencia{
-    private int estoque;
+    private int estoqueAtual;
     private int qtdOcorrencia;
     private float valorUnitario;
 
-    public OcorrenciaProduto(String descricao, boolean tipo, int estoque, int qtdOcorrencia, float valorUnitario) {
+    public OcorrenciaProduto(String descricao, boolean tipo, int estoqueAtual, int qtdOcorrencia, float valorUnitario) {
         super(descricao, tipo);
-        this.setEstoque(estoque);
+        this.setEstoqueAtual(estoqueAtual);
         this.setQtdOcorrencia(qtdOcorrencia);
         this.setValorUnitario(valorUnitario);
     }
 
-    public int getEstoque() {
-        return estoque;
+    public int getEstoqueAtual() {
+        return estoqueAtual;
     }
 
-    public void setEstoque(int estoque) {
-        if (estoque < 0) {
+    public void setEstoqueAtual(int estoqueAtual) {
+        if (estoqueAtual < 0) {
             throw new IllegalArgumentException("Estoque inválido!");
         }
-        if (estoque == 0) {
-            throw new IllegalArgumentException("Estoque vazio!");
-        }
-        this.estoque = estoque;
+        this.estoqueAtual = estoqueAtual;
     }
 
     public int getQtdOcorrencia() {
@@ -47,7 +44,7 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
     }
 
     public boolean vendaEhPossivel(){
-        return this.getEstoque() >= this.getQtdOcorrencia();
+        return this.getEstoqueAtual() >= this.getQtdOcorrencia();
     }
 
     public float calcularValorFinal() {
@@ -56,7 +53,6 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
             throw new IllegalArgumentException("Não há estoque suficiente!");
         }
         float total = this.getQtdOcorrencia() * this.getValorUnitario();
-        this.setEstoque(this.getEstoque() - this.getQtdOcorrencia());
         total -= total*this.calcularDesconto();
         total = (Math.round(total*100f))/100f;
         return total;
