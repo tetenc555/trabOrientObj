@@ -1,23 +1,11 @@
 public abstract class Ocorrencia {
-    private float valor;
     private String descricao;
     private boolean tipo;
 
     public Ocorrencia(String descricao, boolean tipo) {
-        this.calcularValorFinal();
         this.setDescricao(descricao);
         this.setTipo(tipo);
-    }
-
-    public float getValor() {
-        return valor;
-    }
-
-    public void setValor(float valor) {
-        if (valor <=0.0f){
-            throw new IllegalArgumentException("Valor da ocorrência inválido!");
-        }
-        this.valor = valor;
+        //this.setValorFinal(this.calcularValorFinal());
     }
 
     public String getDescricao() {
