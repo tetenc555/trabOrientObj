@@ -2,8 +2,6 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
     private int estoque;
     private int qtdOcorrencia;
     private float valorUnitario;
-    private Pessoa remetente;
-    private Pessoa destinatario;
 
     public OcorrenciaProduto(String descricao, boolean tipo, int estoque, int qtdOcorrencia, float valorUnitario) {
         super(descricao, tipo);
@@ -48,28 +46,6 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
         this.valorUnitario = valorUnitario;
     }
 
-    public Pessoa getRemetente() {
-        return remetente;
-    }
-
-    public void setRemetente(Pessoa remetente) {
-        if (remetente == null) {
-            throw new NullPointerException("Deve possuir um remetente!");
-        }
-        this.remetente = remetente;
-    }
-
-    public Pessoa getDestinatario() {
-        return destinatario;
-    }
-
-    public void setDestinatario(Pessoa destinatario) {
-        if (destinatario == null) {
-            throw new NullPointerException("Deve possuir um destinatário!");
-        }
-        this.destinatario = destinatario;
-    }
-
     public boolean vendaEhPossivel(){
         return this.getEstoque() >= this.getQtdOcorrencia();
     }
@@ -85,13 +61,9 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
         return total;
     }
 
-    public String retornarLocalEntrega(){
-        return ("O endereço de destinatário é a Cidade " + this.destinatario.retornarNomeCidade() + " no estado de " + this.destinatario.retornarNomeEstado() + " - " + this.destinatario.retornarSiglaPais());
-    }
+    public abstract String retornarLocalEntrega();
 
-    public String retornarLocalRemetente(){
-        return ("O endereço do remetente é a Cidade " + this.remetente.retornarNomeCidade() + " no estado de " + this.remetente.retornarNomeEstado() + " - " + this.remetente.retornarSiglaPais());
-    }
+    public abstract String retornarDescricao();
 
     public abstract float calcularDesconto();
 }
