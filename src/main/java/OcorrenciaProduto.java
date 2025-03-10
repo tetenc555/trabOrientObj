@@ -32,7 +32,7 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
 
     public void setQtdOcorrencia(int qtdOcorrencia) {
         if (qtdOcorrencia <= 0) {
-            throw new IllegalArgumentException("Quantidade de itens da ocorrência inválida!")
+            throw new IllegalArgumentException("Quantidade de itens da ocorrência inválida!");
         }
         this.qtdOcorrencia = qtdOcorrencia;
     }
