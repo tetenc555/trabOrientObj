@@ -99,10 +99,29 @@ class ClienteTest {
     }
 
     @Test
-    void deveRetornarQtdCompras(){
+    void naoDeveDefinirQtdComprasMaior52(){
+        try{
+            Cliente p = new Cliente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))));
+            p.setQtdCompras(53);
+            fail();
+        }
+        catch (IllegalArgumentException e){
+            assertEquals("Quantidade de Compras Inválida!", e.getMessage());
+        }
+    }
+
+    @Test
+    void deveDefinirQtdComprasZero(){
         Cliente p = new Cliente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))));
-        p.setQtdCompras(2);
-        assertEquals(2,p.getQtdCompras());
+        p.setQtdCompras(0);
+        assertEquals(0,p.getQtdCompras());
+    }
+
+    @Test
+    void deveResetarQtdCompras(){
+        Cliente p = new Cliente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))));
+        p.setQtdCompras(52);
+        assertEquals(1,p.getQtdCompras());
     }
 
     @Test

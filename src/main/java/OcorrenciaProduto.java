@@ -57,13 +57,14 @@ public abstract class OcorrenciaProduto extends Ocorrencia{
         }
         float total = this.getQtdOcorrencia() * this.getValorUnitario();
         this.setEstoque(this.getEstoque() - this.getQtdOcorrencia());
+        total -= total*this.calcularDesconto();
         total = (Math.round(total*100f))/100f;
         return total;
     }
 
     public abstract String retornarLocalEntrega();
 
-    public abstract String retornarDescricao();
+    public abstract String retornarLocalRemetente();
 
     public abstract float calcularDesconto();
 }

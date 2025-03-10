@@ -13,10 +13,15 @@ public class Cliente extends Pessoa{
     }
 
     public void setQtdCompras(int qtdCompras) {
-        if (qtdCompras < 0) {
+        if (qtdCompras < 0 || qtdCompras > 52) {
             throw new IllegalArgumentException("Quantidade de Compras Inválida!");
         }
-        this.qtdCompras = qtdCompras;
+        if (qtdCompras == 52){
+            this.qtdCompras = 1;
+        }
+        else{
+            this.qtdCompras = qtdCompras;
+        }
     }
 
     public boolean isCartaoFidelidade() {
