@@ -25,6 +25,10 @@ public class folhaPagamento extends Ocorrencia{
         funcionariosPagar.add(funcionario);
     }
 
+    public ArrayList<Funcionario> getFuncionariosPagar() {
+        return funcionariosPagar;
+    }
+
     public void removerTodosFuncionarios(){
         funcionariosPagar.removeAll(funcionariosPagar);
     }
