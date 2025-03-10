@@ -3,6 +3,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class compraAtacadoTest {
+
     //testes relacionados a Ocorrencia
     @Test
     void naoDeveDefinirDescricaoVazia() {
@@ -10,7 +11,7 @@ class compraAtacadoTest {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
-            compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+            compraAtacado v = new compraAtacado("", 20, 2, 2000f, e, p);
             fail();
         } catch (IllegalArgumentException e) {
             assertEquals("Ocorrência deve possuir descrição!", e.getMessage());
@@ -143,5 +144,102 @@ class compraAtacadoTest {
         assertEquals(3600f, v.calcularValorFinal());
     }
 
+    //testes particulares a compraAtacado
 
+    @Test
+    void deveRetornarValorFinalNegativo() {
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,0);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(-3600f, v.retornarValorFinal());
+    }
+
+    @Test
+    void naoDeveDefinirDestinatarioNulo() {
+        try {
+            Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+            Parceiro p = new Parceiro("Empresa 2",1,a,0);
+            compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, null, p);
+            fail();
+        } catch (NullPointerException e) {
+            assertEquals("Deve possuir um destinatário!", e.getMessage());
+        }
+    }
+
+    @Test
+    void naoDeveDefinirRemetenteNulo(){
+        try {
+            Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, null);
+            fail();
+        }
+        catch (NullPointerException e){
+            assertEquals("Deve possuir um remetente!", e.getMessage());
+        }
+    }
+
+    @Test
+    void deveRetornarLocalEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,0);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("O endereço de destinatário é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalEntrega());
+    }
+
+    @Test
+    void deveRetornarLocalRemetente(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,0);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("O endereço do remetente é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalRemetente());
+    }
+
+    @Test
+    void deveCalcularDescontoBase(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,0);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(0.1f,v.calcularDesconto());
+    }
+
+    @Test
+    void deveCalcularDescontoMenosCincoAnos(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(0.18f,v.calcularDesconto());
+    }
+
+    @Test
+    void deveCalcularDescontoAcimaCincoAnos(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,6);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(0.2f,v.calcularDesconto());
+    }
+
+    @Test
+    void deveCalcularValorComDesconto(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(3280f,v.calcularValorFinal());
+    }
+
+    @Test
+    void deveRetornarValorNegativoComDesconto(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals(-3280f,v.retornarValorFinal());
+    }
 }

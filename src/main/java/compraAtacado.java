@@ -32,7 +32,7 @@ public class compraAtacado extends OcorrenciaProduto{
 
     public float calcularDesconto(){
         float desconto =0.1f;
-        if (this.getRemetente().getAnosParceria() > 5) {
+        if (this.getRemetente().getAnosParceria() >= 5) {
             desconto += 0.1f;
         }
         else{
