@@ -3469,6 +3469,7 @@
 											"model": {
 												"$ref": "AAAAAAGVaKQR4ptcUD0="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 709,
@@ -3484,7 +3485,7 @@
 									"left": 704,
 									"top": 457,
 									"width": 163.10888671875,
-									"height": 23
+									"height": 10
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -3508,7 +3509,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 709,
-											"top": 485,
+											"top": 472,
 											"width": 153.10888671875,
 											"height": 13,
 											"text": "+calcularDesconto()",
@@ -3526,7 +3527,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 709,
-											"top": 500,
+											"top": 487,
 											"width": 153.10888671875,
 											"height": 13,
 											"text": "+retornarLocalEntrega()",
@@ -3544,7 +3545,7 @@
 											"font": "Arial;13;0",
 											"parentStyle": true,
 											"left": 709,
-											"top": 515,
+											"top": 502,
 											"width": 153.10888671875,
 											"height": 13,
 											"text": "+retonarLocalRemetente()",
@@ -3554,7 +3555,7 @@
 									"font": "Arial;13;0",
 									"parentStyle": true,
 									"left": 704,
-									"top": 480,
+									"top": 467,
 									"width": 163.10888671875,
 									"height": 53
 								},
@@ -3599,7 +3600,7 @@
 							"left": 704,
 							"top": 432,
 							"width": 162.10888671875,
-							"height": 101,
+							"height": 88,
 							"nameCompartment": {
 								"$ref": "AAAAAAGVV/T9Ia+xXLw="
 							},
@@ -10033,7 +10034,8 @@
 								"$ref": "AAAAAAGVV8dJnnYxsTc="
 							},
 							"name": "valorFinal",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -11045,7 +11047,8 @@
 								"$ref": "AAAAAAGVV/zgT/AmcPk="
 							},
 							"name": "estoqueAtual",
-							"visibility": "private"
+							"visibility": "private",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",

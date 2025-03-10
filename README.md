@@ -18,24 +18,27 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 * Sempre que uma vendaVarejo for instanciada, deve se somar uma compra ao cliente, sendo que esta não deve ser válida para aplicação do desconto no momento desta venda.
 
 ### Classe Parceiro
-* anos de Parceira (int) definem quantos anos há da parceria
-* o valor base entre parceiros é sempre 10% de desconto
-* soma-se mais 2% por cada ano de parceria
+* anosParceira (int) definem quantos anos há da parceria
+* O desconto base entre parceiros é sempre de 10%
+* Soma-se mais 2% por cada ano de parceria, limitado a 5 anos. Caso ultrapasse, o desconto será apenas de mais 10%.
 * a Compra dá um prejuízo menor pois seu valor é reduzido, mas a venda também dá menos lucro
-* Entretanto a venda só pode ser efetivada se atingir uma qtdMinima (int)
+
 ### Classe Funcionário
 * Sempre declara tipo false (prejuízo)
 * Recebe salarioBase - descontos + quantDepAbono
 * quantDepAbono calcula o abono de dependentes. Ou seja, a quant de dependentes com idade menor a 18 * 150,00.
 * Retorna este valor a folha de Pagamento, por meio de calcularSalarioIndividual()
 * OBS calcularValorFinal() na folha de pagamento usa calcularSalarioIndividual()
+
 ### Classe Filial
 - imprimirHistorico usa retornarTexto, função do Historico que imprime as descrições da ocorrência no modelo “Prejuízo/Lucro de R$**,** - ”” Incluindo descrição e separador (hífen) apenas caso haja descrição
 - imprimirDiscriminativo apenas usa retornarTexto para imprimir as descrições
 - obterLucroFinal deve calcular o Lucro da filial a partir de seu histórico
+
 ### Classe Empresa
 - calcularLucroAtual deve calcular o lucro de todas as filiais e salvar em lucroAtual
 - comparacaoDeLucros deve imprimir no modelo “Em comparação ao período anterior, foi obtido prejuízo/lucro de R$**,**” ou “Não houve mudança entre os dois períodos.”
+
 ### Classe Ocorrência e OcorrênciaProduto
 * Ocorrência é pai, ou seja, todas ocorrências possuem valorFinal, descrição e tipo (true para lucro, false para prejuízo). Por isso, retorna positivo em caso de true e negativo em caso de false, pela função retornarValorFinal.
 * OcorrênciaProduto define propriedades apenas utilizadas para as ocorrências envolvendo compra e venda de Produtos
