@@ -27,6 +27,10 @@ public class Funcionario extends Pessoa{
         return descontos;
     }
 
+    public ArrayList<Dependente> getDependentes() {
+        return dependentes;
+    }
+
     public void setDescontos(float descontos) {
         if (descontos < 0.0f) {
             throw new IllegalArgumentException("Desconto inválido.");

@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 //            Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
 class FuncionarioTest {
@@ -83,7 +85,7 @@ class FuncionarioTest {
         assertEquals("BR",p.retornarSiglaPais());
     }
 
-    //testes envolvendo apenas cliente
+    //testes envolvendo apenas funcionario
 
     @Test
     void naoDeveDefinirSalarioBaseAbaixoMinimo(){
@@ -119,6 +121,21 @@ class FuncionarioTest {
         assertEquals(0f,p.getDescontos());
     }
 
+    @Test
+    void deveAdicionarDependente(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        Dependente p1 = new Dependente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),17);
+        Dependente p2 = new Dependente("Caua Moreno",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),18);
+        Dependente p3 = new Dependente("Pedro Moreno Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),19);
+        p.addDependentes(p1);
+        p.addDependentes(p2);
+        p.addDependentes(p3);
+        ArrayList<Dependente> teste = new ArrayList<Dependente>();
+        teste.add(p1);
+        teste.add(p2);
+        teste.add(p3);
+        assertEquals(teste,p.getDependentes());
+    }
 
     @Test
     void deveRetornarQuantidadeDependentesAbonados(){ //aqui também é testado addDependentes
