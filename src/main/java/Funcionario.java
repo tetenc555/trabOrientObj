@@ -47,4 +47,12 @@ public class Funcionario extends Pessoa{
         }
         return quantidadeDependentesAbonados;
     }
+
+    public float calcularSalarioIndividual(){
+        float salarioIndividual = 0;
+        salarioIndividual += this.getSalarioBase();
+        salarioIndividual -= this.getDescontos();
+        salarioIndividual += (this.quantDepAbono() * 150f);
+        return salarioIndividual;
+    }
 }
