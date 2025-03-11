@@ -10,7 +10,7 @@ class vendaVarejoTest {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Cliente c = new Cliente("João Srbek", 1, a);
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("", 20, 2, 2000f, c, e);
             fail();
         } catch (IllegalArgumentException e) {
@@ -22,7 +22,7 @@ class vendaVarejoTest {
     void deveRetonarDescricao() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals("Venda de iPhone 16e", v.getDescricao());
     }
@@ -31,7 +31,7 @@ class vendaVarejoTest {
     void deveRetornarTipoLucroCorreto() {  //vendaVarejo é sempre true, por definição
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertTrue(v.isLucro());
     }
@@ -42,7 +42,7 @@ class vendaVarejoTest {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Cliente c = new Cliente("João Srbek", 1, a);
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", -1, 2, 2000f, c, e);
         } catch (IllegalArgumentException e) {
             assertEquals("Estoque inválido!", e.getMessage());
@@ -53,7 +53,7 @@ class vendaVarejoTest {
     void deveDefinirEstoqueAtualZero() { //aqui também ja testamos o retorno de estoque
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 0, 2, 2000f, c, e);
         assertEquals(0, v.getEstoqueAtual()); //teste do get sera valido pois ele e usado no assertEquals
     }
@@ -63,7 +63,7 @@ class vendaVarejoTest {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Cliente c = new Cliente("João Srbek", 1, a);
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 0, 2000f, c, e);
             fail();
         } catch (IllegalArgumentException e) {
@@ -75,7 +75,7 @@ class vendaVarejoTest {
     void deveDefinirQtdOcorrenciaUm() { //aqui também ja testamos o retorno de qtdOcorrencia
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 1, 2000f, c, e);
         assertEquals(1, v.getQtdOcorrencia()); //teste do get sera valido pois ele e usado no assertEquals
     }
@@ -85,7 +85,7 @@ class vendaVarejoTest {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Cliente c = new Cliente("João Srbek", 1, a);
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 1, 0f, c, e);
             fail();
         } catch (IllegalArgumentException e) {
@@ -97,7 +97,7 @@ class vendaVarejoTest {
     void deveDefinirValorUnitarioUm() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 1, 1f, c, e);
         assertEquals(1, v.getValorUnitario());
     }
@@ -106,7 +106,7 @@ class vendaVarejoTest {
     void vendaNaoEhPossivelQtdMaiorEstoque() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 21, 1f, c, e);
         assertFalse(v.vendaEhPossivel());
     }
@@ -115,7 +115,7 @@ class vendaVarejoTest {
     void vendaEhPossivelQtdIgualEstoque() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 20, 1f, c, e);
         assertTrue(v.vendaEhPossivel());
     }
@@ -125,7 +125,7 @@ class vendaVarejoTest {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
             Cliente c = new Cliente("João Srbek", 1, a);
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 21, 2000f, c, e);
             v.calcularValorFinal();
             fail();
@@ -139,7 +139,7 @@ class vendaVarejoTest {
     void deveCalcularValorFinalSemDesconto() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals(4000f, v.calcularValorFinal());
     }
@@ -150,7 +150,7 @@ class vendaVarejoTest {
     void deveRetornarValorFinalPositvo() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals(4000f, v.retornarValorFinal());
     }
@@ -159,7 +159,7 @@ class vendaVarejoTest {
     void naoDeveDefinirDestinatarioNulo() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, null, e);
             fail();
         } catch (NullPointerException e) {
@@ -184,7 +184,7 @@ class vendaVarejoTest {
     void deveRetornarLocalEntrega(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals("O endereço de destinatário é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalEntrega());
     }
@@ -193,7 +193,7 @@ class vendaVarejoTest {
     void deveRetornarLocalRemetente(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals("O endereço do remetente é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalRemetente());
     }
@@ -202,7 +202,7 @@ class vendaVarejoTest {
     void deveCalcularDescontoZero(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         assertEquals(0f,v.calcularDesconto());
     }
@@ -211,7 +211,7 @@ class vendaVarejoTest {
     void deveCalcularDescontoApenasCartaoFidelidade(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         c.tornarFidelidade();
         assertEquals(0.1f,v.calcularDesconto());
@@ -221,7 +221,7 @@ class vendaVarejoTest {
     void deveCalcularDescontoApenasQtdCompras(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         c.setQtdCompras(13);
         assertEquals(0.02f,v.calcularDesconto());
@@ -231,7 +231,7 @@ class vendaVarejoTest {
     void deveCalcularDescontoComDoisItens(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         c.tornarFidelidade();
         c.setQtdCompras(23);
@@ -242,7 +242,7 @@ class vendaVarejoTest {
     void deveCalcularValorComDesconto(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         c.tornarFidelidade();
         c.setQtdCompras(23);
@@ -253,7 +253,7 @@ class vendaVarejoTest {
     void deveRetornarValorPositivoComDesconto(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
         Cliente c = new Cliente("João Srbek", 1, a);
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         vendaVarejo v = new vendaVarejo("Venda de iPhone 16e", 20, 2, 2000f, c, e);
         c.tornarFidelidade();
         c.setQtdCompras(23);

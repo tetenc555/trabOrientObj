@@ -9,7 +9,7 @@ class compraAtacadoTest {
     void naoDeveDefinirDescricaoVazia() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
             compraAtacado v = new compraAtacado("", 20, 2, 2000f, e, p);
             fail();
@@ -21,7 +21,7 @@ class compraAtacadoTest {
     @Test
     void deveRetonarDescricao() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals("Compra de material de Limpeza", v.getDescricao());
@@ -30,7 +30,7 @@ class compraAtacadoTest {
     @Test
     void deveRetornarTipoLucroCorreto() {  //compraAtacado é sempre false, por definição
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertFalse(v.isLucro());
@@ -41,7 +41,7 @@ class compraAtacadoTest {
     void naoDeveDefinirEstoqueAtualNegativo() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
             compraAtacado v = new compraAtacado("Compra de material de Limpeza", -1, 2, 2000f, e, p);
         } catch (IllegalArgumentException e) {
@@ -52,7 +52,7 @@ class compraAtacadoTest {
     @Test
     void deveDefinirEstoqueAtualZero() { //aqui também ja testamos o retorno de estoque
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 0, 2, 2000f, e, p);
         assertEquals(0, v.getEstoqueAtual()); //teste do get sera valido pois ele e usado no assertEquals
@@ -62,7 +62,7 @@ class compraAtacadoTest {
     void naoDeveDefinirQtdOcorrenciaZero() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
             compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 0, 2000f, e, p);
             fail();
@@ -74,7 +74,7 @@ class compraAtacadoTest {
     @Test
     void deveDefinirQtdOcorrenciaUm() { //aqui também ja testamos o retorno de qtdOcorrencia
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 1, 2000f, e, p);
         assertEquals(1, v.getQtdOcorrencia()); //teste do get sera valido pois ele e usado no assertEquals
@@ -84,7 +84,7 @@ class compraAtacadoTest {
     void naoDeveDefinirValorUnitarioZero() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
             compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 1, 0f, e, p);
             fail();
@@ -96,7 +96,7 @@ class compraAtacadoTest {
     @Test
     void deveDefinirValorUnitarioUm() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 1, 1f, e, p);
         assertEquals(1, v.getValorUnitario());
@@ -105,7 +105,7 @@ class compraAtacadoTest {
     @Test
     void vendaNaoEhPossivelQtdMaiorEstoque() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 21, 1f, e, p);
         assertFalse(v.vendaEhPossivel());
@@ -114,7 +114,7 @@ class compraAtacadoTest {
     @Test
     void vendaEhPossivelQtdIgualEstoque() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,1);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 20, 1f, e, p);
         assertTrue(v.vendaEhPossivel());
@@ -124,7 +124,7 @@ class compraAtacadoTest {
     void naoDeveCalcularValorFinalSeVendaNaoEhPossivel() {
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             Parceiro p = new Parceiro("Empresa 2",1,a,1);
             compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 21, 2000f, e, p);
             v.calcularValorFinal();
@@ -138,7 +138,7 @@ class compraAtacadoTest {
     @Test
     void deveCalcularValorFinalDescontoBase() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,0);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(3600f, v.calcularValorFinal());
@@ -149,7 +149,7 @@ class compraAtacadoTest {
     @Test
     void deveRetornarValorFinalNegativo() {
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,0);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(-3600f, v.retornarValorFinal());
@@ -171,7 +171,7 @@ class compraAtacadoTest {
     void naoDeveDefinirRemetenteNulo(){
         try {
             Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-            Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+            Empresa e = new Empresa("Empresa 1", 456, a,  0);
             compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, null);
             fail();
         }
@@ -183,7 +183,7 @@ class compraAtacadoTest {
     @Test
     void deveRetornarLocalEntrega(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,0);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals("O endereço de destinatário é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalEntrega());
@@ -192,7 +192,7 @@ class compraAtacadoTest {
     @Test
     void deveRetornarLocalRemetente(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,0);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals("O endereço do remetente é a Cidade Juiz de Fora no estado de Minas Gerais - BR",v.retornarLocalRemetente());
@@ -201,7 +201,7 @@ class compraAtacadoTest {
     @Test
     void deveCalcularDescontoBase(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,0);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(0.1f,v.calcularDesconto());
@@ -210,7 +210,7 @@ class compraAtacadoTest {
     @Test
     void deveCalcularDescontoMenosCincoAnos(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,4);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(0.18f,v.calcularDesconto());
@@ -219,7 +219,7 @@ class compraAtacadoTest {
     @Test
     void deveCalcularDescontoAcimaCincoAnos(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,6);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(0.2f,v.calcularDesconto());
@@ -228,7 +228,7 @@ class compraAtacadoTest {
     @Test
     void deveCalcularValorComDesconto(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,4);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(3280f,v.calcularValorFinal());
@@ -237,7 +237,7 @@ class compraAtacadoTest {
     @Test
     void deveRetornarValorNegativoComDesconto(){
         Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
-        Empresa e = new Empresa("Empresa 1", 456, a, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
         Parceiro p = new Parceiro("Empresa 2",1,a,4);
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(-3280f,v.retornarValorFinal());

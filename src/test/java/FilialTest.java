@@ -40,7 +40,7 @@ class FilialTest {
         Historico h = new Historico();
         folhaPagamento v = new folhaPagamento("Folha de Pagamento do Mês de Maio", 1.5f);
         Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
-        Empresa e = new Empresa("Empresa 1", 456, c, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, c,  0);
         Parceiro j = new Parceiro("Empresa 2",1,c,0);
         vendaAtacado g = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, j, e);
         h.addOcorrencia(v);
@@ -56,7 +56,7 @@ class FilialTest {
         folhaPagamento v = new folhaPagamento("Folha de Pagamento do Mês de Maio", 1.5f);
         Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
         Funcionario p = new Funcionario("Fernando Silva",123,c,1412.0f,100.0f);
-        Empresa e = new Empresa("Empresa 1", 456, c, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, c,  0);
         Parceiro j = new Parceiro("Empresa 2",1,c,0);
         vendaAtacado g = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, j, e);
         h.addOcorrencia(v);
@@ -84,7 +84,7 @@ class FilialTest {
         folhaPagamento v = new folhaPagamento("Folha de Pagamento do Mês de Maio", 1.5f);
         v.adicionarFuncionario(p);
         v.adicionarFuncionario(d);
-        Empresa e = new Empresa("Empresa 1", 456, c, 0, 0);
+        Empresa e = new Empresa("Empresa 1", 456, c,  0);
         Parceiro j = new Parceiro("Empresa 2",1,c,0);
         vendaAtacado g = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, j, e);
         h.addOcorrencia(v);
