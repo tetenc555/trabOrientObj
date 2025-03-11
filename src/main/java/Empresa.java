@@ -40,22 +40,19 @@ public class Empresa extends Pessoa {
     public String comparacaoDeLucros(){
         float lucroAtual = this.getLucroAtual();
         float lucroMedioAnterior = this.getLucroMedioAnterior();
-        //ajuste de sinais em variaveis locais para conta correta
-        if (lucroAtual<0){
-            lucroAtual = lucroAtual*-1;
-        }
-        if (lucroMedioAnterior<0){
-            lucroMedioAnterior = lucroMedioAnterior*-1;
-        }
+
+        //calculo diferenca
+        float diferenca = lucroAtual - lucroMedioAnterior;
+
         //retorno
-        if (lucroAtual == lucroMedioAnterior){
+        if (diferenca == 0.0f){
             return "Não houve mudança entre os dois períodos";
         }
-        else if (lucroAtual > lucroMedioAnterior){
-            return ("Em comparação ao período anterior, foi obtido lucro de R$" + (lucroAtual-lucroMedioAnterior));
+        else if (diferenca > 0){
+            return ("Em comparação ao período anterior, foi obtido lucro de R$" + diferenca);
         }
         else {
-            return ("Em comparação ao período anterior, foi obtido prejuízo de R$" + (lucroMedioAnterior-lucroAtual));
+            return ("Em comparação ao período anterior, foi obtido prejuízo de R$" + (diferenca*-1)); //ajuste de sinal p impressao co9rreta
         }
     }
 
