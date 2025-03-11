@@ -35,6 +35,10 @@ public class Filial {
         return this.getHistorico().imprimirDescricoes();
     }
 
+    public float obterLucroFinal(){
+        return this.getHistorico().calcularLucroFinal();
+    }
+
     public int qtdDependentesCoordenadorLocal(){
         return this.getCoordenadorLocal().quantDeps();
     }
