@@ -117,6 +117,9 @@ class FilialTest {
         }
     }
 
+    //Consultas
+
+    //Consulta 8
     @Test
     void deveRetornarQtdDependentesCoordenador(){
         Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
@@ -132,6 +135,7 @@ class FilialTest {
         assertEquals(3,f.qtdDependentesCoordenadorLocal());
     }
 
+    //Consulta 9
     @Test
     void deveRetornarQtdDependentesAbonadosCoordenador(){
         Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
