@@ -42,6 +42,10 @@ public class Funcionario extends Pessoa{
         this.dependentes.add(dependente);
     }
 
+    public int quantDeps(){
+        return this.dependentes.size();
+    }
+
     public int quantDepAbono(){
         int quantidadeDependentesAbonados = 0;
         for (Dependente dependente : dependentes) {

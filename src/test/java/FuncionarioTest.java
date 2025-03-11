@@ -138,6 +138,18 @@ class FuncionarioTest {
     }
 
     @Test
+    void deveRetornarQuantidadeDependentes(){
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        Dependente p1 = new Dependente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),17);
+        Dependente p2 = new Dependente("Caua Moreno",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),18);
+        Dependente p3 = new Dependente("Pedro Moreno Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),19);
+        p.addDependentes(p1);
+        p.addDependentes(p2);
+        p.addDependentes(p3);
+        assertEquals(3,p.quantDeps());
+    }
+
+    @Test
     void deveRetornarQuantidadeDependentesAbonados(){ //aqui também é testado addDependentes
         Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
         Dependente p1 = new Dependente("João Srbek",1,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),17);
