@@ -30,6 +30,31 @@ public class vendaAtacado  extends OcorrenciaProduto {
         this.destinatario = destinatario;
     }
 
+    public String retornarNomeCidadeDestinatario(){
+        return this.getDestinatario().retornarNomeCidade();
+    }
+
+    public String retornarNomeEstadoDestinatario(){
+        return this.getDestinatario().retornarNomeEstado();
+    }
+
+    public String retornarNomePaisDestinatario(){
+        return this.getDestinatario().retornarNomePais();
+    }
+
+
+    public String retornarNomeCidadeRemetente(){
+        return this.getRemetente().retornarNomeCidade();
+    }
+
+    public String retornarNomeEstadoRemetente(){
+        return this.getRemetente().retornarNomeEstado();
+    }
+
+    public String retornarNomePaisRemetente(){
+        return this.getRemetente().retornarNomePais();
+    }
+
     public float calcularDesconto() {
         float desconto = 0.1f;
         if (this.getDestinatario().getAnosParceria() >= 5) {

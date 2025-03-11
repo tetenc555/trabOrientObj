@@ -241,4 +241,26 @@ class vendaAtacadoTest {
         vendaAtacado v = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, p, e);
         assertEquals(3280f,v.retornarValorFinal());
     }
+
+    //Consultas
+
+    //Consulta 11
+    @Test
+    void deveRetornarNomeEstadoEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        vendaAtacado v = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, p, e);
+        assertEquals("Minas Gerais",v.retornarNomeEstadoDestinatario());
+    }
+
+    //Consulta 12
+    @Test
+    void deveRetornarNomePaisEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        vendaAtacado v = new vendaAtacado("Venda de Lote de PCS", 20, 2, 2000f, p, e);
+        assertEquals("Brasil",v.retornarNomePaisDestinatario());
+    }
 }

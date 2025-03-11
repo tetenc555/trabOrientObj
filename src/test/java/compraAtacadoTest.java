@@ -242,4 +242,66 @@ class compraAtacadoTest {
         compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
         assertEquals(-3280f,v.retornarValorFinal());
     }
+
+    //Consultas
+
+    //Consulta 13
+    @Test
+    void deveRetornarNomeCidadeEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Juiz de Fora",v.retornarNomeCidadeDestinatario());
+    }
+
+    //Consulta 14
+    @Test
+    void deveRetornarNomeEstadoEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Minas Gerais",v.retornarNomeEstadoDestinatario());
+    }
+
+    //Consulta 15
+    @Test
+    void deveRetornarNomePaisEntrega(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Brasil",v.retornarNomePaisDestinatario());
+    }
+
+    //Consulta 16
+    @Test
+    void deveRetornarNomeCidadeRemetente(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Juiz de Fora",v.retornarNomeCidadeRemetente());
+    }
+
+    //Consulta 17
+    @Test
+    void deveRetornarNomeEstadoRemetente(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Minas Gerais",v.retornarNomeEstadoRemetente());
+    }
+
+    //Consulta 18
+    @Test
+    void deveRetornarNomePaisRemetente(){
+        Cidade a = new Cidade("Juiz de Fora", "JF", new Estado("Minas Gerais", "MG", new Pais("Brasil", "BR")));
+        Empresa e = new Empresa("Empresa 1", 456, a,  0);
+        Parceiro p = new Parceiro("Empresa 2",1,a,4);
+        compraAtacado v = new compraAtacado("Compra de material de Limpeza", 20, 2, 2000f, e, p);
+        assertEquals("Brasil",v.retornarNomePaisRemetente());
+    }
 }
