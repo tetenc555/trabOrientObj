@@ -1,24 +1,14 @@
 import java.util.ArrayList;
 
 public class Historico {
-    private float lucroFinal;
     private ArrayList<Ocorrencia> ocorrencias;
 
     public Historico() {
-        this.setLucroFinal(calcularLucroFinal());
         this.ocorrencias = new ArrayList<Ocorrencia>();
     }
 
-    public float getLucroFinal() {
-        return lucroFinal;
-    }
-
-    public void setLucroFinal(float lucroFinal) {
-        this.lucroFinal = lucroFinal;
-    }
-
     public ArrayList<Ocorrencia> getOcorrencias() {
-        return ocorrencias;
+        return this.ocorrencias;
     }
 
     public void addOcorrencia(Ocorrencia o) {
@@ -53,12 +43,7 @@ public class Historico {
             else{
                 texto += "Prejuízo de R$" + o.calcularValorFinal();
             }
-            if(o.getDescricao().isEmpty()){
-                texto += "\n";
-            }
-            else{
-                texto += " - " + o.getDescricao() + "\n";
-            }
+            texto += " - " + o.getDescricao() + "\n";
         }
         return texto;
     }
