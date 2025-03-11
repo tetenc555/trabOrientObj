@@ -6,9 +6,6 @@ public class Filial {
     }
 
     public Funcionario getCoordenadorLocal() {
-        if (coordenadorLocal == null) {
-            throw new IllegalArgumentException("Não há coordenador local na Filial!"); //como não é obrigatório, precisa de verificação no get.
-        }
         return coordenadorLocal;
     }
 
@@ -40,10 +37,16 @@ public class Filial {
     }
 
     public int qtdDependentesCoordenadorLocal(){
+        if (coordenadorLocal == null) {
+            throw new NullPointerException("Não há coordenador local na Filial!"); //como não é obrigatório, precisa de verificação no get.
+        }
         return this.getCoordenadorLocal().quantDeps();
     }
 
     public int qtdDepsAbonoCoordenadorLocal(){
+        if (coordenadorLocal == null) {
+            throw new NullPointerException("Não há coordenador local na Filial!"); //como não é obrigatório, precisa de verificação no get.
+        }
         return this.getCoordenadorLocal().quantDepAbono();
     }
 }
