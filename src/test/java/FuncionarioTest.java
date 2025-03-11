@@ -61,30 +61,6 @@ class FuncionarioTest {
         assertEquals("JF",p.retornarSiglaCidade());
     }
 
-    @Test
-    void deveRetornarNomeEstado() {
-        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
-        assertEquals("Minas Gerais",p.retornarNomeEstado());
-    }
-
-    @Test
-    void deveRetornarSiglaEstado() {
-        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
-        assertEquals("MG",p.retornarSiglaEstado());
-    }
-
-    @Test
-    void deveRetornarNomePais() {
-        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
-        assertEquals("Brasil",p.retornarNomePais());
-    }
-
-    @Test
-    void deveRetornarSiglaPais() {
-        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
-        assertEquals("BR",p.retornarSiglaPais());
-    }
-
     //testes envolvendo apenas funcionario
 
     @Test
@@ -195,5 +171,33 @@ class FuncionarioTest {
         p.addDependentes(p2);
         p.addDependentes(p3);
         assertEquals(1612.0f,p.calcularSalarioIndividual());
+    }
+
+    //Consultas
+
+    //Consulta 6
+    @Test
+    void deveRetornarNomeEstado() {
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        assertEquals("Minas Gerais",p.retornarNomeEstado());
+    }
+
+    @Test
+    void deveRetornarSiglaEstado() {
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        assertEquals("MG",p.retornarSiglaEstado());
+    }
+
+    //Consulta 7
+    @Test
+    void deveRetornarNomePais() {
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        assertEquals("Brasil",p.retornarNomePais());
+    }
+
+    @Test
+    void deveRetornarSiglaPais() {
+        Funcionario p = new Funcionario("Fernando Silva",123,new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR"))),1412.0f,0.0f);
+        assertEquals("BR",p.retornarSiglaPais());
     }
 }
