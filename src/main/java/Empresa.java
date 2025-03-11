@@ -55,7 +55,7 @@ public class Empresa extends Pessoa {
 
         //calculo diferenca
         float diferenca = lucroAtual - lucroMedioAnterior;
-
+        diferenca = ((Math.round(diferenca * 100.0f)) / 100.0f);
         //retorno
         if (diferenca == 0.0f){
             return "Não houve mudança entre os dois períodos";
