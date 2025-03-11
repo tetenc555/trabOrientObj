@@ -169,6 +169,21 @@ class EmpresaTest {
 
     //Consulta 2
     @Test
+    void deveRetornarPaisNomeEmpresa(){
+        Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
+        Empresa e = new Empresa("Empresa 1", 456, c,  423.1f);
+        assertEquals("Brasil",e.retornarNomePais());
+    }
+
+    @Test
+    void deveRetornarPaisSiglaEmpresa(){
+        Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
+        Empresa e = new Empresa("Empresa 1", 456, c,  423.1f);
+        assertEquals("BR",e.retornarSiglaPais());
+    }
+
+    //Consulta 3
+    @Test
     void deveSalvarLucroAtualPositivo(){
         Historico h = new Historico();
         Cidade c = new Cidade ("Juiz de Fora", "JF",new Estado("Minas Gerais", "MG", new Pais("Brasil","BR")));
