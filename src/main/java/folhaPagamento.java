@@ -41,4 +41,20 @@ public class folhaPagamento extends Ocorrencia{
         valorTotal = (Math.round(valorTotal * 100f) / 100f);
         return valorTotal;
     }
+
+    public int qtdDependentes(){
+        int qtdDependentes = 0;
+        for (Funcionario funcionario : funcionariosPagar) {
+            qtdDependentes+=funcionario.quantDeps();
+        }
+        return qtdDependentes;
+    }
+
+    public int qtdDepsAbono(){
+        int qtdDependentes = 0;
+        for (Funcionario funcionario : funcionariosPagar) {
+            qtdDependentes+=funcionario.quantDepAbono();
+        }
+        return qtdDependentes;
+    }
 }
