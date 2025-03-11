@@ -31,9 +31,10 @@ Uma empresa busca controlar seus lucros de maneira digital. Para isso, ela anali
 * OBS calcularValorFinal() na folha de pagamento usa calcularSalarioIndividual()
 
 ### Classe Filial
-- imprimirHistorico usa retornarTexto, função do Historico que imprime as descrições da ocorrência no modelo “Prejuízo/Lucro de R$**,** - ”” Incluindo descrição e separador (hífen) apenas caso haja descrição
-- imprimirDiscriminativo apenas usa retornarTexto para imprimir as descrições
+- imprimirHistorico usa imprimirDetalhado, função do Historico que imprime as descrições da ocorrência no modelo “Prejuízo/Lucro de R$**,** - ”” Incluindo descrição e separador (hífen) apenas caso haja descrição
+- imprimirApenasDiscriminativo apenas usa retornarTexto para imprimir as descrições
 - obterLucroFinal deve calcular o Lucro da filial a partir de seu histórico
+
 
 ### Classe Empresa
 - calcularLucroAtual deve calcular o lucro de todas as filiais e salvar em lucroAtual
