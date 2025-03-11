@@ -29,6 +29,18 @@ public class Empresa extends Pessoa {
         this.lucroMedioAnterior = lucroMedioAnterior;
     }
 
+    public void addFilial(Filial f) {
+        filiais.add(f);
+    }
+
+    public ArrayList<Filial> getFiliais() {
+        return filiais;
+    }
+
+    public void removerFilial (Filial f) {
+        filiais.remove(f);
+    }
+
     public void calcularLucroAtual(){
         float lucroTotal = 0.0f;
         for (Filial f : filiais){
