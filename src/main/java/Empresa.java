@@ -10,7 +10,7 @@ public class Empresa extends Pessoa {
         super(nome, ID, cidade);
         this.setLucroAtual(0);
         this.lucroMedioAnterior = lucroMedioAnterior;
-        this.filiais = new ArrayList<Filial>();
+        this.filiais = new ArrayList<>();
     }
 
     public float getLucroAtual() {
